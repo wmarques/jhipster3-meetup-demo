@@ -60,6 +60,12 @@ services:
         extends:
             file: jhipster-registry.yml
             service: jhipster-registry
+            
+    jhipster-dashboard:
+        extends:
+            file: jhipster-dashboard.yml
+            service: jhipster-dashboard
+            
     elk-elasticsearch:
         extends:
             file: elk.yml
