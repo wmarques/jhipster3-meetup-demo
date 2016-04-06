@@ -1,0 +1,25 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "product",
+    "pagination": "no",
+    "microserviceName": "insurances",
+    "searchEngine": "no"
+}

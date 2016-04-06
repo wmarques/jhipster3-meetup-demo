@@ -1,0 +1,9 @@
+version: '2'
+services:
+    insurances-mongodb:
+        container_name: insurances-mongodb
+        image: mongo:3.2.3
+        ports:
+            - "27017:27017"
+        # volumes:
+        #     - ~/volumes/jhipster/insurances/mongodb/:/data/db/

@@ -1,0 +1,71 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+eureka:
+    instance:
+        appname: insurances
+        instanceId: insurances:${spring.application.instance_id:${random.value}}
+
+ribbon:
+    eureka:
+        enabled: true
+
+spring:
+    application:
+        name: insurances
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+
+security:
+    basic:
+        enabled: false
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    async:
+        corePoolSize: 2
+        maxPoolSize: 50
+        queueCapacity: 10000
+    #cors: #By default CORS are not enabled. Uncomment to enable.
+        #allowed-origins: "*"
+        #allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        #allowed-headers: "*"
+        #exposed-headers:
+        #allow-credentials: true
+        #max-age: 1800
+    mail:
+        from: insurances@localhost
+    security:
+        authentication:
+            jwt:
+                secret: f1878b7dc8b1ff30fde80f351ea36548ac8ecd80
+                # Token is valid 24 hours
+                tokenValidityInSeconds: 86400
+    swagger:
+        title: insurances API
+        description: insurances API documentation
+        version: 0.0.1
+        termsOfServiceUrl:
+        contactName:
+        contactUrl:
+        contactEmail:
+        license:
+        licenseUrl:

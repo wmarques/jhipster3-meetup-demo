@@ -1,0 +1,17 @@
+version: '2'
+services:
+    insurances-mongodb:
+        container_name: insurances-mongodb
+        image: mongo:3.2.3
+        ports:
+            - "27017:27017"
+        command: mongos --configdb insurances-mongodb-config
+    insurances-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    insurances-mongodb-config:
+        image: mongo:3.2.3
+        container_name: insurances-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
