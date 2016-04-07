@@ -2,10 +2,11 @@
   "generator-jhipster": {
     "appsFolders": [
       "accounts-microservice",
+      "accounts-microservice-v2",
       "hipster-bank-gateway",
       "insurances-microservice"
     ],
-    "useElk": true,
+    "useElk": false,
     "jwtSecretKey": "e6c399e1c91efdcd74fdd799858a1d0b3ccbd0c0"
   }
 }

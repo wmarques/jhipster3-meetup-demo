@@ -1,9 +1,6 @@
-jhipster.swagger.enabled: true
-
 property.greeting: Greetings Java Hipster !
 
-#feature-toggle.account: v1
-feature-toggle.account: v2
+feature-toggle.account: v1
 
 zuul:
   ignoredServices: '*'
