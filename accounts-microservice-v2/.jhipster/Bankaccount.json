@@ -1,0 +1,26 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "clientname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "balance",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160406151040",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "bankaccount",
+    "pagination": "no",
+    "microserviceName": "accountsMicroservice",
+    "searchEngine": "elasticsearch"
+}
