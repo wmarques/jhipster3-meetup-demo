@@ -6,3 +6,11 @@ jhipster:
         authentication:
             jwt:
                 secret: e6c399e1c91efdcd74fdd799858a1d0b3ccbd0c0
+    logging:
+        logstash: # forward logs to ELK
+            enabled: true
+            host: elk-logstash
+    metrics:
+        logs: # report metrics in the logs
+            enabled: true
+            reportFrequency: 60 # in seconds

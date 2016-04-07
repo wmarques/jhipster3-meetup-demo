@@ -7,7 +7,7 @@ zuul:
   routes:
     accountsmicroservicev2:
       path: /accountsmicroservice/**
-      serviceId: accountsmicroservicev2
+      serviceId: accountsmicroservice
     insurances:
       path: /insurances/**
       serviceId: insurances 

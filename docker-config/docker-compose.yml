@@ -19,30 +19,6 @@ services:
             - MYSQL_DATABASE=accountsmicroservice
         command: mysqld --lower_case_table_names=1 --skip-ssl
     
-    accountsmicroservicev2-app:
-        image: accountsmicroservicev2
-        external_links:
-            - accountsmicroservicev2-mysql:mysql
-            - accountsmicroservicev2-elasticsearch:elasticsearch
-            - jhipster-registry:registry
-        environment:
-            - SPRING_PROFILES_ACTIVE=prod
-            - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:8761/eureka/
-            - SPRING_CLOUD_CONFIG_URI=http://registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/accountsmicroservicev2?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
-            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
-    accountsmicroservicev2-mysql:
-        container_name: accountsmicroservicev2-mysql
-        image: mysql:5.7.11
-        environment:
-            - MYSQL_USER=root
-            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-            - MYSQL_DATABASE=accountsmicroservicev2
-        command: mysqld --lower_case_table_names=1 --skip-ssl
-    accountsmicroservicev2-elasticsearch:
-        container_name: accountsmicroservicev2-elasticsearch
-        image: elasticsearch:1.7.5
-    
     hipsterbankgateway-app:
         image: hipsterbankgateway
         external_links:
@@ -84,3 +60,15 @@ services:
         extends:
             file: jhipster-registry.yml
             service: jhipster-registry
+    elk-elasticsearch:
+        extends:
+            file: elk.yml
+            service: elk-elasticsearch
+    elk-logstash:
+        extends:
+          file: elk.yml
+          service: elk-logstash
+    jhipster-console:
+        extends:
+            file: elk.yml
+            service: jhipster-console
