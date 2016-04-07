@@ -18,7 +18,18 @@ services:
             - MYSQL_ALLOW_EMPTY_PASSWORD=yes
             - MYSQL_DATABASE=accountsmicroservice
         command: mysqld --lower_case_table_names=1 --skip-ssl
-    
+
+    accountsmicroservicev2-app:
+        image: accountsmicroservicev2
+        external_links:
+            - accountsmicroservice-mysql:mysql
+            - jhipster-registry:registry
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry:8761/eureka/
+            - SPRING_CLOUD_CONFIG_URI=http://registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/accountsmicroservice?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
+
     hipsterbankgateway-app:
         image: hipsterbankgateway
         external_links:

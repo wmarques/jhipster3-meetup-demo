@@ -1,12 +1,16 @@
+jhipster.swagger.enabled: true
+
 property.greeting: Greetings Java Hipster !
 
-feature-toggle.account: v1
-#feature-toggle.account: v2
+#feature-toggle.account: v1
+feature-toggle.account: v2
 
 zuul:
   ignoredServices: '*'
   routes:
-    accountsmicroservice:
+    accountsmicroservicev2:
       path: /accountsmicroservice/**
-      serviceId: accountsMicroservice
-      #serviceId: accountsMicroservicev2
+      serviceId: accountsmicroservicev2
+    insurances:
+      path: /insurances/**
+      serviceId: insurances 
