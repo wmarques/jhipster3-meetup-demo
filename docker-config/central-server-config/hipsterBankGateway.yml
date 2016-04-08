@@ -5,7 +5,7 @@ feature-toggle.account: v1
 zuul:
   ignoredServices: '*'
   routes:
-    accountsmicroservicev2:
+    accountsmicroservice:
       path: /accountsmicroservice/**
       serviceId: accountsmicroservice
     insurances:
