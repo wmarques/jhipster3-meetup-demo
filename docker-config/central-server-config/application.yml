@@ -13,4 +13,4 @@ jhipster:
     metrics:
         logs: # report metrics in the logs
             enabled: true
-            reportFrequency: 60 # in seconds
+            reportFrequency: 10 # in seconds
