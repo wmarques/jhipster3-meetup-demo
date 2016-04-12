@@ -1,4 +1,5 @@
-# JHipster 3rd Paris Meetup - Microservice presentation by Pierre Besson & William Marques
+# JHipster 3rd Paris Meetup
+# Microservice demo by Pierre Besson & William Marques
 
 Refer to the slides at: [wmarques.github.io/meetup-jhipster-3](http://wmarques.github.io/meetup-jhipster-3).
 
